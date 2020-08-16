@@ -34,13 +34,25 @@
 // findOddTimes2(arr)
 
 //quetion 2
-// const createUnSorted = function(i){
-//     let arr = []
+// const checkMissingNum = function(arr){
+//     let newArr = []
+//     for(let num of arr){
+//         newArr[num] = 1
+//     }
 //     for(let j = 1; j<=100; j++){
-//         arr[i] = 
+//         if(!(newArr[j])){
+//             return j
+//         }
 //     }
 // }
-
+// let randArr = []
+// for(let i = 1; i<=100; i++){
+//     if(i != 43){
+//         randArr.splice(0,0,i)
+//     }
+// }
+// console.log(randArr)
+// console.log(checkMissingNum(randArr))
 
 // const person = {
 //     username: "Felica",
@@ -161,59 +173,59 @@
 //   shoutIt(narkis, revealSecret);
 
 //ex 6
-const coffeeShop = {
-    beans: 40,
-    money: 0,
+// const coffeeShop = {
+//     beans: 40,
+//     money: 0,
 
-    drinkRequirements: {
-        latte: { beanRequirement: 10, price: 15 },
-        americano: { beanRequirement: 5, price: 10 },
-        doubleShot: { beanRequirement: 15, price: 20 },
-        frenchPress: { beanRequirement: 12, price: 17 }
-    },
+//     drinkRequirements: {
+//         latte: { beanRequirement: 10, price: 15 },
+//         americano: { beanRequirement: 5, price: 10 },
+//         doubleShot: { beanRequirement: 15, price: 20 },
+//         frenchPress: { beanRequirement: 12, price: 17 }
+//     },
 
-    makeDrink: function (drinkType) {
-        if (this.drinkRequirements[drinkType]) {
-            if (this.beans >= this.drinkRequirements[drinkType].beanRequirement) {
-                this.beans -= this.drinkRequirements[drinkType].beanRequirement
-                console.log(`this is your ${drinkType} enjoy`)
-                return true;
-            } else {
-                console.log("Sorry, we're all out of beans")
-                return false;
-            }
-        } else {
-            console.log(`Sorry, we don't make ${drinkType}`)
-            return false;
-        }
-    },
-    makeDrink2: function (drinkType) {
-        if (this.drinkRequirements[drinkType] && this.beans >= this.drinkRequirements[drinkType].beanRequirement) {
-            this.beans -= this.drinkRequirements[drinkType].beanRequirement
-            console.log(`this is your ${drinkType} enjoy`)
-            return true
-        } else {
-            let msg = ''
-            this.drinkRequirements[drinkType] ? msg = "Sorry, we're all out of beans" : msg = `Sorry, we don't make ${drinkType}`
-            console.log(msg)
-            return false
-        }
-    },
-    buyDrink: function (drinkType) {
-        if (this.makeDrink(drinkType)) {
-            this.money += this.drinkRequirements[drinkType].price
-        }
-    },
-    buyBeans: function (numBeans) {
-        this.money -= numBeans * 0.5
-        this.beans += numBeans
-    }
-}
+//     makeDrink: function (drinkType) {
+//         if (this.drinkRequirements[drinkType]) {
+//             if (this.beans >= this.drinkRequirements[drinkType].beanRequirement) {
+//                 this.beans -= this.drinkRequirements[drinkType].beanRequirement
+//                 console.log(`this is your ${drinkType} enjoy`)
+//                 return true;
+//             } else {
+//                 console.log("Sorry, we're all out of beans")
+//                 return false;
+//             }
+//         } else {
+//             console.log(`Sorry, we don't make ${drinkType}`)
+//             return false;
+//         }
+//     },
+//     makeDrink2: function (drinkType) {
+//         if (this.drinkRequirements[drinkType] && this.beans >= this.drinkRequirements[drinkType].beanRequirement) {
+//             this.beans -= this.drinkRequirements[drinkType].beanRequirement
+//             console.log(`this is your ${drinkType} enjoy`)
+//             return true
+//         } else {
+//             let msg = ''
+//             this.drinkRequirements[drinkType] ? msg = "Sorry, we're all out of beans" : msg = `Sorry, we don't make ${drinkType}`
+//             console.log(msg)
+//             return false
+//         }
+//     },
+//     buyDrink: function (drinkType) {
+//         if (this.makeDrink(drinkType)) {
+//             this.money += this.drinkRequirements[drinkType].price
+//         }
+//     },
+//     buyBeans: function (numBeans) {
+//         this.money -= numBeans * 0.5
+//         this.beans += numBeans
+//     }
+// }
 
-coffeeShop.buyDrink("latte");
-coffeeShop.buyDrink("americano");
-coffeeShop.buyDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
-coffeeShop.buyDrink("doubleShot");
-coffeeShop.buyDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
-coffeeShop.buyBeans(20)
-console.log(`money: ${coffeeShop.money} coffe beans: ${coffeeShop.beans}`)
+// coffeeShop.buyDrink("latte");
+// coffeeShop.buyDrink("americano");
+// coffeeShop.buyDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
+// coffeeShop.buyDrink("doubleShot");
+// coffeeShop.buyDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+// coffeeShop.buyBeans(20)
+// console.log(`money: ${coffeeShop.money} coffe beans: ${coffeeShop.beans}`)
