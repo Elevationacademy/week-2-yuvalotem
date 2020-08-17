@@ -19,21 +19,10 @@
     display: grid;
     align-content: center;
     justify-content: center;
+    background-color: #2274A5;
 }
 .nav-option:hover{
     border-style: solid;
-}
-#o{
-    background-color: #2274A5;
-}
-#home{
-    background-color: #2274A5;
-}
-#about{
-    background-color: #2274A5;
-}
-#conect{
-    background-color: #2274A5;
 }
 
 #foot{
