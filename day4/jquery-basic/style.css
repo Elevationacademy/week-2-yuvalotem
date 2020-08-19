@@ -21,7 +21,7 @@
     display: inline-block;
   } */
 
-  /* .item{
+  .item{
     width: 100px;
     margin: 10px;
     box-shadow: 1px 1px 3px black;
@@ -40,7 +40,7 @@
   
   #cart{
     margin: 10px;
-  } */
+  }
 
   /* .brown{
     color: brown
@@ -59,7 +59,7 @@
   } */
 
 
-  body{
+  /* body{
     background: #ecf0f1;
 }
 
@@ -86,4 +86,4 @@
     display: inline-block;
     font-weight: bold;
     cursor: pointer;
-}
+} */

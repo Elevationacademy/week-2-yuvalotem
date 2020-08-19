@@ -75,9 +75,12 @@
 // })
 
 //ex 4
-// $('.item').on('click', function(){
+// $('.item').on('click', function () {
+//     let countshoes = 1
+//     let countmelons = 1
 //     if($(this).data().instock){
-//     $('#cart').append(`<div class=cart-item>${$(this).text()}</div>`)
+//         const item = `<div>${$(this).text()}</div>`
+//         $('#cart').append(item)
 //     }
 // })
 
@@ -98,10 +101,34 @@
 //   }
 
 //ex extention
-$('span').addClass('picker')
-for (let color of $('span')) {
-     $(color).css('background-color', $(color).data().color)
+// $('span').addClass('picker')
+// for (let color of $('span')) {
+//      $(color).css('background-color', $(color).data().color)
+// }
+// $('.picker').on('click', function(){
+//     $('.box').css('background-color', $(this).data().color)
+// })
+
+//data flow ex
+let posts = [
+    {name: 'yuval', text:'hello'}
+]
+ 
+const render = function(){
+    $('#post-place').empty()
+    for(let post of posts){
+        let div = `<div class='post'>${post.name}: ${post.text}</div>`
+        $('#post-place').append(div)
+    }
 }
-$('.picker').on('click', function(){
-    $('.box').css('background-color', $(this).data().color)
+
+$('#btn').click(function(){
+    posts.push({name:$('#name').val(), text:$('#text').val()})
+    render()
 })
+
+$('#post-place').on('click','.post', function(){
+    let i = posts.indexOf($(this).text())
+    posts.splice(i, 1)
+    render()
+} )
