@@ -74,15 +74,31 @@
 //     $(this).css('background-color', '#8e44ad')
 // })
 
-//ex 4
-// $('.item').on('click', function () {
-//     let countshoes = 1
-//     let countmelons = 1
-//     if($(this).data().instock){
-//         const item = `<div>${$(this).text()}</div>`
-//         $('#cart').append(item)
-//     }
-// })
+//ex 4 + extention
+let countshoes = 1
+let countmelons = 1
+$('#cart').append('<div id="shoes" class="items"></div>')
+$('#cart').append('<div id="melons" class="items"></div>')
+$('.item').on('click', function () {
+    if ($(this).data().instock) {
+        let item = ''
+        if ($(this).text() == 'Shoe') {
+            $('#shoes').empty()
+            $('#shoes').text(`Shoe x${countshoes}`) 
+            countshoes++
+        } else {
+            $('#melons').empty()
+            $('#melons').text(`melon x${countmelons}`) 
+            countmelons++
+        }
+    }
+})
+$('#cart').on('click', '.items',  function () {
+    let obj = $(this).text()
+    obj.slice(1, obj[obj.length-1])
+    $(this).empty()
+    $(this).text(obj)
+})
 
 // ex 5
 // const fruits = [
@@ -110,25 +126,29 @@
 // })
 
 //data flow ex
-let posts = [
-    {name: 'yuval', text:'hello'}
-]
- 
-const render = function(){
-    $('#post-place').empty()
-    for(let post of posts){
-        let div = `<div class='post'>${post.name}: ${post.text}</div>`
-        $('#post-place').append(div)
-    }
-}
+// let posts = [
+//     {name: 'yuval', text:'hello'}
+// ]
 
-$('#btn').click(function(){
-    posts.push({name:$('#name').val(), text:$('#text').val()})
-    render()
-})
+// const render = function(){
+//     $('#post-place').empty()
+//     for(let post of posts){
+//         let div = `<div class='post'>${post.name}: ${post.text}</div>`
+//         $('#post-place').append(div)
+//     }
+// }
 
-$('#post-place').on('click','.post', function(){
-    let i = posts.indexOf($(this).text())
-    posts.splice(i, 1)
-    render()
-} )
+// $('#btn').click(function(){
+//     posts.push({name:$('#name').val(), text:$('#text').val()})
+//     render()
+// })
+
+// $('#post-place').on('click','.post', function(){
+//     let item = $(this).text().split(': ')
+//     for(let i in posts){
+//         if(posts[i].name == item[0] && posts[i].text == item[1]){
+//             posts.splice(i, 1)
+//         }
+//     }
+//     render()
+// } )
